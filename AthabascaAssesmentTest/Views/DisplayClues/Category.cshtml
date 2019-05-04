@@ -1,0 +1,73 @@
+﻿@model IEnumerable<AthabascaAssesmentTest.Models.RootObject>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.clues_count)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clues_count)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+
+<h2>Searched Clues:</h2>
+
+<table class="table">
+
+    <tr>
+        <th>
+            Answer
+        </th>
+        <th>
+            Question
+        </th>
+        <th>
+            Value
+        </th>
+        <th>
+            AirDate
+        </th>
+        <th>
+           CategoryId
+        </th>
+        <th>
+            InvalidCount
+        </th>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        foreach (var i in item.clues)
+        {
+    <tr>
+        <td>  @i.question </td>
+        <td>  @i.answer </td>
+        <td>   @i.value</td>
+        <td>   @i.airdate</td>
+        <td>  @i.category_id </td>
+        <td>   @i.invalid_count</td>
+       
+    </tr>
+        }
+
+    }
+
+
+</table>

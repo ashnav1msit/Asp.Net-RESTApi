@@ -1,0 +1,86 @@
+﻿<div class="jumbotron">
+    <h1>Athabasca Assessment </h1>
+    <p class="lead">This web application is calling RESTAPI <h2> http://jservice.io/api/clues </h2></p>
+
+</div>
+@section Scripts {
+    <script type="text/javascript">
+
+
+            var url = '@Url.Action("GetRandom", "DisplayClues")';
+                $('#randomclue').click(function() {
+            var keyWord = $('#Keyword').val();
+             $('#searchResults').load(url, { searchText: keyWord });
+                })
+
+       
+      
+        
+        $('#category').click(function() {
+            
+            var txtVal = $("#categoryvalue").val();
+              var url2 = '@Url.Action("Category", "DisplayClues" )' + "?id=" + txtVal;
+           // alert(txtVal);
+            //alert(url2);
+            var keyWord = $('#Keyword').val();
+             $('#searchResults').load(url2, { searchText: keyWord });
+        })
+
+          
+        $('#period').click(function () {
+            var todate = $("#todate").val();
+            var fromdate = $("#fromdate").val();
+            
+
+            var url3 = '@Url.Action("Period", "DisplayClues")' + "?fromDate=" + todate + "&toDate" + todate;
+            
+            var keyWord = $('#Keyword').val();
+             $('#searchResults').load(url3, { searchText: keyWord });
+                })
+
+    </script>
+}
+<div class="row">
+    <div class="col-md-4">
+        <h2>Generate Random Clue</h2>
+        <p>Click button below to generate Random Clue</p>
+        <button id="randomclue" value="Click Here"> click me </button>
+
+
+
+
+    </div>
+    <div class="col-md-4">
+        <h2>Search Clue by Category</h2>
+        <p>Enter Category and submit button.</p>
+        
+            <input id="categoryvalue" type="text" />
+            <button id="category" value="Click Here"> click me </button>
+
+       
+    </div>
+    <div class="col-md-4">
+        <h2>Search Clue by Date</h2>
+        <p>Enter date in format '' to search Clue</p>
+        <p>
+
+
+            <input id="todate" type="datetime-local" /> </br>
+            <input id="fromdate" type="datetime-local" />
+            <button id="period" value="Click Here"> click me </button>
+
+          
+
+</div>
+
+
+</div>
+
+<div>
+    <p><h1>Results: </h1></p>
+    <div id="searchResults"> </div>
+</div>
+
+
+
+
