@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AthabascaAssesmentTest", "AthabascaAssesmentTest\AthabascaAssesmentTest.csproj", "{FEECFEFC-DD6B-4855-A354-7E0443B7F640}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeProject", "HomeProject\HomeProject.csproj", "{FEECFEFC-DD6B-4855-A354-7E0443B7F640}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -109,7 +109,7 @@ namespace AthabascaAssesmentTest.Controllers
                 //Define request data format  
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                //Sending request to find web api REST service resource get data using HttpClient  
                 HttpResponseMessage Res = await client.GetAsync("api/category?id=" + id);
                 Debug.WriteLine("My debug string here");
 
@@ -123,11 +123,7 @@ namespace AthabascaAssesmentTest.Controllers
                     cluess.Add(category);
                 }
 
-                /*foreach(var a in category.clues)
-                {
-                    Debug.WriteLine( + a.question.ToString());
-                }
-                */
+             
 
                                 // return View();
                 return PartialView("Category", cluess);
